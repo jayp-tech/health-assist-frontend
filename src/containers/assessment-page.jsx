@@ -6,6 +6,7 @@ import { LoadingComponent } from '../components/loading/loading'
 import { RequestState } from '../lib/types'
 import { getAssessmentQuestions, onLoadPatientAssessmentPage, submitAssessmentQuestions } from '../store/actions/patient'
 import Header from './header'
+import AssessmentBanner from '../components/assessment-banner/assessment-banner'
 
 export default function AssessmentPage(props) {
     const questions = useSelector(state => state.patient.questions);
@@ -50,13 +51,18 @@ export default function AssessmentPage(props) {
             <Header />
             {
                 questionsState !== RequestState.COMPLETED ? <LoadingComponent /> :
-                    <AssessmentForm
+                (
+                    <div>
+                      <AssessmentBanner/>
+                      <AssessmentForm
                         questions={questions}
                         onAttempt={onAttempt}
                         onSubmit={onSubmit}
                         questionSubmitState={questionSubmitState}
                         errorMessage={errorMessage}
-                    />
+                      />
+                    </div>
+                  )
             }
             <FooterComponent />
         </>

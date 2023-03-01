@@ -13,7 +13,7 @@ export default function AssessmentForm({ questions, onAttempt, onSubmit, questio
         return questions.map((questionRecord, index) => {
             return (
                 <div key={questionRecord.questionId} className={classNames(`${index % 2 === 1 ? 'odd' : ''}`, "question-container")}>
-                    <div className='question-count'>Question {index + 1} of 9</div>
+                    <div className='question-count'>{index + 1} of 9</div>
                     <div className='assessment-question'>{questionRecord.question}</div>
                     <div className='radio-group'>
                         <BooleanRadioGroupComponent onChange={(value) => {
@@ -25,7 +25,7 @@ export default function AssessmentForm({ questions, onAttempt, onSubmit, questio
         })
     }
     return <div className='aform-container'>
-        <h2 className='assessment-form-heading'>Assessment Form</h2>
+        <h2 className='assessment-form-heading'>Patient Health Questionnaire (PHQ-9)</h2>
         <QuestionList questions={questions} />
         {
             questionSubmitState === RequestState.COMPLETED && <SucessMessage>Your assessment submitted successfully!</SucessMessage>

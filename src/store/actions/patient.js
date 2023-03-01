@@ -7,7 +7,7 @@ import {
 } from "../types";
 import { openErrorMessageModal } from "./gui";
 
-const ASSETMENT_ID = "635b203cf4d8b811f7a0ac0b";
+const ASSETMENT_ID = "63f7eba4e2ed6db9100a301e";
 export const getAssessmentQuestions = () => async (dispatch) => {
   const url = `patient/assessment/${ASSETMENT_ID}`;
   request(url, "GET")
@@ -39,7 +39,7 @@ export const getAssessmentQuestions = () => async (dispatch) => {
 export const submitAssessmentQuestions =
   (attemptedQuestions) => async (dispatch) => {
     const url = `patient/assessment/${ASSETMENT_ID}`;
-    if (!attemptedQuestions || !attemptedQuestions.length) {
+    if (!attemptedQuestions || attemptedQuestions.length!==9) {
       dispatch({
         type: PATIENT_ASSESSMENT_SUBMIT_ERROR,
         errorMessage: "You have not attempted any questions!"
