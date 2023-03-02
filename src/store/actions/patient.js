@@ -39,7 +39,7 @@ export const getAssessmentQuestions = () => async (dispatch) => {
 export const submitAssessmentQuestions =
   (attemptedQuestions) => async (dispatch) => {
     const url = `patient/assessment/${ASSETMENT_ID}`;
-    if (!attemptedQuestions || !attemptedQuestions.length) {
+    if (!attemptedQuestions || attemptedQuestions.length!==9) {
       dispatch({
         type: PATIENT_ASSESSMENT_SUBMIT_ERROR,
         errorMessage: "You have not attempted any questions!"

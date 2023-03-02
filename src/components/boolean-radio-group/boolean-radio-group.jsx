@@ -37,7 +37,7 @@ export const BooleanRadioGroupComponent = ({ onChange }) => {
             }}
             className={classNames(option === 1 ? "selected" : "")}
         >
-            Yes
+            Not At All
         </Button>
         <div className='space'></div>
         <Button onClick={(e) => {
@@ -45,6 +45,22 @@ export const BooleanRadioGroupComponent = ({ onChange }) => {
             onChangeWrapper(0);
         }}
             className={classNames(option === 0 ? "selected" : "")}
-        >No</Button>
+        >Several Days
+        </Button>
+        <div className='space'></div>
+        <Button onClick={(e) => {
+            e.preventDefault();
+            onChangeWrapper(2);
+        }}
+            className={classNames(option === 2 ? "selected" : "")}
+        >More Than Half The Days
+        </Button>
+        <div className='space'></div>
+        <Button onClick={(e) => {
+            e.preventDefault();
+            onChangeWrapper(3);
+        }}
+            className={classNames(option === 3 ? "selected" : "")}
+        >Nearly Every day</Button>
     </OptionContainer>
 }
