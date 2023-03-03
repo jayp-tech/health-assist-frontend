@@ -34,7 +34,7 @@ export default function HeaderComponent({
                 {userRole === UserRole.PATIENT && <Link to={PathConstants.PatientEditProfile}>Edit</Link>}
                 {userRole === UserRole.COUNSELOR && <Link to={PathConstants.CounselorEditProfile}>Edit</Link>}
                 {userRole === UserRole.DOCTOR && <Link to={PathConstants.DoctorEditProfile}>Edit</Link>}
-                {userRole !== UserRole.NULL && <button onClick={onLogout}>Log out</button>} 
+                {userRole !== UserRole.NULL && <Link to="#" onClick={onLogout}>Log out</Link>}
                 
             </div>
          </div>
