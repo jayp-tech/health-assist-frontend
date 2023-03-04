@@ -10,7 +10,6 @@ export default function LandingPageComponent() {
             <Header />
             <CardComponent></CardComponent>
             <SubFooterComponent></SubFooterComponent>
-            <FooterComponent></FooterComponent>
         </>
     )
 }
