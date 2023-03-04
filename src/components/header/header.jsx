@@ -14,8 +14,7 @@ export default function HeaderComponent({
     return (
         <div className="header" >  
              <div className="logo-container">
-            <img src={logo} alt="Health Assists Logo" width="80" height="80" />
-            <Link to={PathConstants.Home} className="logo-text">Health Assist</Link>
+            <Link to={PathConstants.Home} className="logo-text"><img src={logo} alt="Health Assists Logo" width="80" height="80" /> Health Assist</Link>
             </div>
         
             <div className="header-right">

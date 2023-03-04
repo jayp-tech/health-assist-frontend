@@ -16,6 +16,17 @@
     z-index: 1;
   }
 
+  .assessment-banner__content .elementToFadeInAndOut {
+    opacity: 1;
+    animation: fade 2s linear;
+  }
+
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+  
   .assessment-banner__content h1 {
     font-size: 2rem;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);

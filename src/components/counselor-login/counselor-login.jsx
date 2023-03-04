@@ -27,12 +27,12 @@ export default function CounselorLoginComponent({
                 <div className="header-form">
                     <div className='logo-container'>
                     <img src={logo} alt="logo" style={{ width: "110px", height: "110px" }} />
+                    Health Assisted
                     </div>
                 
-                     {/* <h4 className="text-primary">HealthAssist</h4> */}
+                    {/* <h4 className="text-primary">HealthAssist</h4> */}
                     {/* <h4 className="text-primary text-center"><i className="fa fa-user-circle" style={{ fontSize: "110px" }}></i>HealthAssist</h4> */}
-
-                </div>
+                    </div>
                 <div className="body-form">
                     <form onSubmit={(e) => {
                         e.preventDefault();
