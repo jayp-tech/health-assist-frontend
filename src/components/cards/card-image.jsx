@@ -5,7 +5,7 @@ import Step2Image from "./images/create-account.jpg";
 import Step5Image from "./images/doctor.png";
 import Step1Image from "./images/mental-health.jpg";
 import Step3Image from "./images/patient-checklist.jpg";
-import './assessment-banner.css';
+import './landing-banner.css';
 
 export default function CardImageComponent() {
     return (
