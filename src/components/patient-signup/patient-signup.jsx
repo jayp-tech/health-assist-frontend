@@ -245,7 +245,7 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <span>
             By creating an account, you agree to our{" "}
-            <a href="#/" rel="noopener">
+            <a href="https://www.camh.ca/en/terms-of-use" rel="noopener noreferrer" target="_blank">
               Terms & Privacy
             </a>{" "}
           </span>
