@@ -20,11 +20,29 @@ export default function ViewAssessment({ assessmentResult }) {
                     {/* </thead> */}
                 </tr>
                 {(assessmentResult.attemptedQuestions || []).map((attemptedQuestion, index) => {
+                     let answerText = '';
+                     switch (attemptedQuestion.answer) {
+                       case 1:
+                         answerText = 'Not At All';
+                         break;
+                       case 2:
+                         answerText = 'More Than Half The Days';
+                         break;
+                       case 3:
+                         answerText = 'Nearly Every day';
+                         break;
+                       case 0:
+                         answerText = 'Several Days';
+                         break;
+                       default:
+                         answerText = 'Not Selected';
+                         break;
+                     }
                     return (
                         <tr className="va-row" key={`attempted-question-${index}`}>
                             <td className="va-index" >{index + 1}</td>
                             <td className="va-question">{attemptedQuestion.question}</td>
-                            <td className="va-description">{attemptedQuestion.answer ? 'YES' : 'NO'}</td>
+                            <td className="va-description">{answerText}</td>
                         </tr>
                     )
                 })
