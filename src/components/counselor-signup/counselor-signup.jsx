@@ -133,7 +133,7 @@ export function CounselorSignupComponent({ user, onFieldChange, onSubmit }) {
             onKeyUp={passwordKeyUp}
             autoComplete="true"
             value={user.password}
-            pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             onChange={(e) => {
               onFieldChange("password", e.target.value);
@@ -253,7 +253,7 @@ export function CounselorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <span>
             By creating an account, you agree to our{" "}
-            <a href="#/" rel="noopener">
+            <a href="https://www.camh.ca/en/terms-of-use" target="_blank" rel="noopener noreferrer">
               Terms & Privacy
             </a>{" "}
           </span>
