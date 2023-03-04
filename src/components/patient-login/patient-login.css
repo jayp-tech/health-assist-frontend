@@ -11,6 +11,7 @@ body{
     width:100%;
 }
   .form-box{
+      margin-top: 20px;
       width:380px;
       height:600px;
       background-color:black;
