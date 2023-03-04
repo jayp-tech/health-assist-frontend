@@ -136,11 +136,8 @@ export function CounselorSignupComponent({ user, onFieldChange, onSubmit }) {
             onKeyUp={passwordKeyUp}
             autoComplete="true"
             value={user.password}
-<<<<<<< Updated upstream
-=======
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
->>>>>>> Stashed changes
             onChange={(e) => {
               onFieldChange("password", e.target.value);
             }}
