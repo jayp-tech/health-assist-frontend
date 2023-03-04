@@ -82,7 +82,7 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
   return (
     <>
       <div className="signup-form">
-        <h1>LIFELINE</h1>
+        <h1>SIGN UP</h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();
