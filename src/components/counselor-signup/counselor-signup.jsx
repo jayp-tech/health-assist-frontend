@@ -260,11 +260,13 @@ export function CounselorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br />
           <br />
+          <div class="button-wrapper">
           <input
             type="submit"
             className="user-signup-button"
             value="Signup"
           ></input>
+            </div>
         </form>
       </div>
 

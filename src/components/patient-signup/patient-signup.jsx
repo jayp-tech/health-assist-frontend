@@ -240,7 +240,7 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <span>
+          <span class="signup-form-text">
             By creating an account, you agree to our{" "}
             <a href="https://www.camh.ca/en/terms-of-use" target="_blank" rel="noopener noreferrer">
               Terms & Privacy
@@ -249,11 +249,13 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br />
           <br />
+          <div class="button-wrapper">
           <input
             type="submit"
             className="user-signup-button"
             value="Register"
           ></input>
+          </div>
         </form>
       </div>
       <div className="extra"></div>

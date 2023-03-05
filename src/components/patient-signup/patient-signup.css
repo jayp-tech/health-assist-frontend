@@ -1,17 +1,36 @@
-.signup-form {
+/* .signup-form {
     max-width: 500px;
     display: block;
     margin: auto;
     padding: 1rem;
     margin-top: 2%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* added box-shadow */
-    text-align: center;
-    background-color: #719ac0;
-    border: 1px solid #ced4da; /* add a border */
-    border-radius: 10px; 
-    }
+    /* text-align: center; */
+    /* background-color: #719ac0; */
+    /* border: 1px solid #ced4da; */
+    /* border-radius: 10px;  */
+    /* background-color:black; */
+    /* }  */
     
-    .signup-form h2 {
+.signup-form h1 {
+    color: white;
+    text-align: center;
+}
+
+.signup-form {
+    margin: 20px auto;
+    width:380px;
+    height: calc(99);
+    background-color:black;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    opacity:0.5;
+    border-radius:2%;
+}
+
+    .signup-form.signup-form h2 {
     text-align: center; /* changed .h2 to h2 */
     }
     
@@ -60,8 +79,11 @@
     height: 4rem;
     }
     
-    .show-password-text {
+    .signup-form label {
+    margin-left: 5px;
     font-size: 0.8rem;
+    color: white;
+    font-size: 1rem;
     }
     
     input[type="email"],
@@ -151,3 +173,11 @@
     left: -20px;
     content: "✖";
 }
+
+.signup-form span {
+    color: white;
+  }
+
+  .button-wrapper {
+    text-align: center;
+  }
