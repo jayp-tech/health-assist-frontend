@@ -262,19 +262,12 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br />
           <br />
+          <div class="button-wrapper">
           <input
             type="submit"
             className="user-signup-button"
             value="Signup"
           ></input>
-          <div className="login-box">
-            <Link
-              relative="path"
-              to={PathConstants.DoctorLogin}
-              className="login-link"
-            >
-              Already have an account?
-            </Link>
           </div>
         </form>
       </div>
