@@ -27,7 +27,6 @@ export default function CounselorLoginComponent({
                 <div className="header-form">
                     <div className='logo-container'>
                     <img src={logo} alt="logo" style={{ width: "110px", height: "110px" }} />
-                    Health Assisted
                     </div>
                 
                     {/* <h4 className="text-primary">HealthAssist</h4> */}
