@@ -34,12 +34,11 @@ export function SubFooterComponent() {
                 <a href='https://www.discord.com/' target="_blank" rel='noreferrer'>
                     <FontAwesomeIcon id='discordCSS' className='socialMediaIcons' icon={faDiscord} ></FontAwesomeIcon>
                 </a>
+                <p>Credits:  <a href='https://pngtree.com/freebackground/blue-medical-care-safety-banner_1033967.html?sol=downref&id=bef'>free background photos from pngtree.com</a></p>
+        </div>
             </div>
         </div>
-        <div className='credits-section'>
-            <p>Credits:  <a href='https://pngtree.com/freebackground/blue-medical-care-safety-banner_1033967.html?sol=downref&id=bef'>free background photos from pngtree.com</a></p>
-        </div>
-    </div>
+     
     
     )
 }

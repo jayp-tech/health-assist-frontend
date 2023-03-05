@@ -1,7 +1,15 @@
 .footer-container {
     position: relative;
-    background-color: #abafb1;
+    background-color: black;
     padding: 5%;
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+   
+}
+.footer-container .container{
+    opacity: 80%;
+    color: white;
 }
 
 .para {

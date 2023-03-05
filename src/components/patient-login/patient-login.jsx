@@ -21,7 +21,7 @@ export function PatientLoginComponent({
 }) {
     return (
         <div className='login-form'>
-            <h2 className='h2'>Health Assist</h2>
+            <h2 className='h2'>Patient Login</h2>
             <form className='loginForm' onSubmit={(e) => {
                 e.preventDefault();
                 onClick();
