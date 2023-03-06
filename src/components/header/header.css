@@ -3,6 +3,7 @@
     top: 0;
     z-index: 999;
     padding: 1px 1px;
+    height: 55px;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
@@ -11,6 +12,9 @@
     font-family: Arial, sans-serif;
 }
     
+
+
+
 .header button {
     border: 0;
     cursor: pointer;
@@ -64,11 +68,16 @@ button {
     align-items: center;
 }
 
+.header .logo-container p{
+    font-size: 32px;
+    margin-top: 42px;
+    color: white;
+}
 .header .logo-container img {
-    height: 50px; /* set a smaller height value */
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 21px;
     margin-right: 10px;
 }
     
@@ -76,7 +85,7 @@ button {
     font-weight: bold;
     margin-left: 10px;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
     text-decoration: none;
@@ -92,6 +101,7 @@ button {
 .header .header-right a {
     margin-left: 20px;
 }
+
 
 @media screen and (max-width: 500px) {
     .header a {

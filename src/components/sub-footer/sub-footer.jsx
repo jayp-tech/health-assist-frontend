@@ -35,6 +35,9 @@ export function SubFooterComponent() {
                     <FontAwesomeIcon id='discordCSS' className='socialMediaIcons' icon={faDiscord} ></FontAwesomeIcon>
                 </a>
                 <p>Credits:  <a href='https://pngtree.com/freebackground/blue-medical-care-safety-banner_1033967.html?sol=downref&id=bef'>free background photos from pngtree.com</a></p>
+                <p >
+                    Copyright &copy; {new Date().getFullYear()}  <a href='self' rel="noopener">Health Assist</a>
+                </p>
         </div>
             </div>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import './card-otheruser.css'
 import { Link } from 'react-router-dom'
-import LoginImage0 from './images/patient-login.jpg'
-import LoginImage1 from './images/counselor-login.jpg'
-import LoginImage2 from './images/doctors-login.jpg'
+import LoginImage0 from './images/patient-login.png'
+import LoginImage1 from './images/counselor-login.png'
+import LoginImage2 from './images/doctor-login.png'
 import { PathConstants } from '../../lib/path-constants'
 
 export default function CardOtherLoginComponent() {
