@@ -30,6 +30,10 @@ export default function StatusPage() {
   const payload = useSelector(
     (state) => state.patient.patientRecordStatusPayload
   );
+  // const payload1 = {
+  //   ...payload,
+  //   patientRecordStatus: "COUNSELOR_APPOINTMENT",
+  // };
 
   return (
     <>
