@@ -82,16 +82,16 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
   return (
     <>
       <div className="signup-form">
-        <h2 className="h2">LIFELINE</h2>
+        <h1>SIGN UP</h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit();
           }}
         >
-          <label>Doctor Registration Number</label>
           <input
             type="text"
+            className="form-control"
             placeholder="Please Enter Your Registration Number"
             value={user.registrationNumber}
             required={true}
@@ -100,10 +100,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
               onFieldChange("registrationNumber", e.target.value);
             }}
           />
-
-          <label>Full Name</label>
           <input
             type="text"
+            className="form-control"
             placeholder="Enter your first name"
             required={true}
             autoComplete="true"
@@ -112,10 +111,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
               onFieldChange("fullName", e.target.value);
             }}
           />
-
-          <label>Email Address</label>
           <input
             type="email"
+            className="form-control"
             placeholder="Enter your email address"
             required={true}
             autoComplete="true"
@@ -125,9 +123,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>Password</label>
           <input
             type="password"
+            className="form-control"
             id="myPasswordInput"
             placeholder="Enter your password"
             required={true}
@@ -136,6 +134,8 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
             onKeyUp={passwordKeyUp}
             autoComplete="true"
             value={user.password}
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             onChange={(e) => {
               onFieldChange("password", e.target.value);
             }}
@@ -161,12 +161,11 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
               Minimum <b>8 characters</b>
             </p>
           </div>
-
-          <label>Re-type Password</label>
           <input
             type="password"
+            className="form-control"
             id="myReTypeInput"
-            placeholder="Re-type your password"
+            placeholder="Confirm your password"
             required={true}
             autoComplete="true"
             value={user.rePassword}
@@ -179,14 +178,13 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
           <br />
           <br />
 
-          <label>Date of Birth</label>
           <input
             type="date"
             placeholder="Date Of Birth"
+            className="date-of-birth"
             max={"2004-11-01"}
             required={true}
             autoComplete="true"
-            className="date-of-birth"
             value={user.dateOfBirth}
             onChange={(e) => {
               onFieldChange("dateOfBirth", e.target.value);
@@ -195,9 +193,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br></br>
           <br></br>
-          <label>Address</label>
           <input
             type="text"
+            className="form-control"
             placeholder="House Number, Street Name"
             required={true}
             autoComplete="true"
@@ -207,9 +205,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>City</label>
           <input
             type="text"
+            className="form-control"
             placeholder="Enter your city"
             required={true}
             autoComplete="true"
@@ -219,9 +217,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>Province</label>
           <select
             id="province"
+            className="form-control"
             name="province"
             required={true}
             autoComplete="true"
@@ -242,9 +240,9 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br></br>
           <br></br>
-          <label>Phone Number</label>
           <input
             type="tel"
+            className="form-control"
             placeholder="1234567890"
             pattern="[0-9]{10}"
             required={true}
@@ -257,28 +255,19 @@ export function DoctorSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <span>
             By creating an account, you agree to our{" "}
-            <a href="#/" rel="noopener">
+            <a href="https://www.camh.ca/en/terms-of-use" target="_blank" rel="noopener noreferrer">
               Terms & Privacy
             </a>{" "}
           </span>
 
           <br />
           <br />
+          <div class="button-wrapper">
           <input
             type="submit"
             className="user-signup-button"
             value="Signup"
           ></input>
-          <div className="login-box">
-            <span>No Account?</span>
-            <br />
-            <Link
-              relative="path"
-              to={PathConstants.DoctorLogin}
-              className="login-link"
-            >
-              Already have an account?
-            </Link>
           </div>
         </form>
       </div>

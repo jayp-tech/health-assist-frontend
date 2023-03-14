@@ -1,7 +1,15 @@
 .footer-container {
     position: relative;
-    background-color: #fff;
+    background-color: black;
     padding: 5%;
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+   
+}
+.footer-container .container{
+    opacity: 80%;
+    color: white;
 }
 
 .para {
@@ -57,6 +65,9 @@ textarea {
 .col-1 {
     flex: 1;
     justify-content: space-between;
+    flex: 1;
+    justify-content: center; /* add this line */
+    text-align: center; /* add this line */
 }
 
 .socialMediaIcons {
@@ -104,3 +115,11 @@ textarea {
 #contactUsCSS {
     margin-top: 10px;
 }
+
+.credits-section {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  
+  

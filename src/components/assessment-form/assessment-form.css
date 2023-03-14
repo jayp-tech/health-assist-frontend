@@ -45,11 +45,17 @@
     margin-bottom: 70px;
     border-width: 2px;
     border-color: hsla(210, 100%, 56%, 1);
-    background: white;
+    background: hsla(210,100%,56%,1);
     font-size: 1rem;
     border-radius: 10px;
     width: 20%;
     padding: 10px 10px;
+    color: #f6f4f4;
+  }
+
+  .submit-button-container button:hover {
+    background-color: #2f68ca;
+    color: #333;
   }
   
   .question-count {
@@ -63,6 +69,7 @@
   .odd {
     background-color: #f2f2f2;
   }
+  
   
   .question-container {
       padding: 10px;

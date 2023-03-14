@@ -1,0 +1,154 @@
+
+.login-form {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 2%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* added box-shadow */
+    text-align: center;
+    background-color: #719ac0;
+    border: 1px solid #ced4da; /* add a border */
+    border-radius: 10px; 
+    }
+    
+    .login-form  h2 {
+    text-align: center; /* changed .h2 to h2 */
+    }
+    
+    .date-of-birth {
+    float: right;
+    width: 150px;
+    font-size: medium;
+    }
+    
+    .user-login-button {
+        background-color: #345b8a; /* set the background color to gold */
+        color: #fff; /* set the text color to white */
+        border: none; /* remove the border */
+        border-radius: 10px; /* round the corners */
+        padding: 10px 20px; /* add padding to the button */
+        font-size: 18px; /* set the font size */
+        font-weight: bold; /* set the font weight to bold */
+        cursor: pointer; /* add a pointer cursor on hover */
+        transition: all 0.2s ease-in-out; /* add a smooth transition effect */
+        display: inline-block;
+      }
+      
+    .signup-button:hover {
+        background-color: #3978a2; /* darken the background color on hover */
+    }
+      
+    .signup-button:active {
+        transform: translateY(2px); /* add a slight upward shift when the button is clicked */
+    }
+      
+    
+    .user-signup-button:hover {
+    background-color: dodgerblue;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .user-signup-button:active {
+    background-color: dodgerblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
+    
+    .extra {
+    height: 4rem;
+    }
+    
+    .show-password-text {
+    font-size: 0.8rem;
+    }
+    
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    }
+    
+    select {
+    float: left;
+    }
+    
+    .login-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .login-box .login-link {
+    border: 0;
+    background: white;
+    color: dodgerblue;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    }
+    
+    .error-message {
+    margin-top: 10px;
+    }
+    
+    #errorSignupMessage {
+    color: red;
+    padding-bottom: 0.4rem;
+    }
+    
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+    display: none;
+    background: whitesmoke;
+    color: #000;
+    position: relative;
+    padding: 0.3rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.2rem;
+    }
+    
+    #message p {
+    padding: 10px 35px;
+    font-size: 16px;
+    }
+    
+    #passwordValidationPopup {
+    left: -20px;
+    }
+    
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+    color: green;
+    }
+    
+    .valid:before {
+    position: relative;
+    left: -20px;
+    content: "✔";
+    }
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -20px;
+    content: "✖";
+}

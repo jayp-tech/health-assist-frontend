@@ -1,5 +1,6 @@
 import React from "react";
 import "./patient-signup.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function showPassword() {
   var x = document.getElementById("myPasswordInput");
@@ -80,16 +81,16 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
   return (
     <>
       <div className="signup-form">
-        <h2 className="h2">Health Assist</h2>
+      <h1>SIGN UP</h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit();
           }}
         >
-          <label>Full Name</label>
           <input
             type="text"
+            className="form-control"
             placeholder="Enter your first name"
             required={true}
             autoComplete="true"
@@ -98,11 +99,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
               onFieldChange("fullName", e.target.value);
             }}
           />
-          <br />
-
-          <label>Email Address</label>
           <input
             type="email"
+            className="form-control"
             placeholder="Enter your email address"
             required={true}
             autoComplete="true"
@@ -112,9 +111,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>Password</label>
           <input
             type="password"
+            className="form-control"
             id="myPasswordInput"
             placeholder="Enter your password"
             onFocus={passwordFocus}
@@ -150,12 +149,11 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
               Minimum <b>8 characters</b>
             </p>
           </div>
-
-          <label>Re-type Password</label>
           <input
             type="password"
+            className="form-control"
             id="myReTypeInput"
-            placeholder="Re-type your password"
+            placeholder="Confirm your password"
             value={user.rePassword}
             required={true}
             autoComplete="true"
@@ -168,7 +166,6 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
           <br />
           <br />
 
-          <label>Date of Birth</label>
           <input
             type="date"
             placeholder="Date Of Birth"
@@ -184,9 +181,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br></br>
           <br></br>
-          <label>Address</label>
           <input
             type="text"
+            className="form-control"
             placeholder="House Number, Street Name"
             required={true}
             autoComplete="true"
@@ -196,9 +193,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>City</label>
           <input
             type="text"
+            className="form-control"
             placeholder="Enter your city"
             value={user.city}
             required={true}
@@ -208,9 +205,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <label>Province</label>
           <select
             id="province"
+            className="form-control"
             name="province"
             required={true}
             value={user.province}
@@ -230,9 +227,9 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
 
           <br></br>
           <br></br>
-          <label>Phone Number</label>
           <input
             type="tel"
+            className="form-control"
             placeholder="1234567890"
             required={true}
             autoComplete="true"
@@ -243,20 +240,22 @@ export function PatientSignupComponent({ user, onFieldChange, onSubmit }) {
             }}
           />
 
-          <span>
+          <span class="signup-form-text">
             By creating an account, you agree to our{" "}
-            <a href="#/" rel="noopener">
+            <a href="https://www.camh.ca/en/terms-of-use" target="_blank" rel="noopener noreferrer">
               Terms & Privacy
             </a>{" "}
           </span>
 
           <br />
           <br />
+          <div class="button-wrapper">
           <input
             type="submit"
             className="user-signup-button"
-            value="Signup"
+            value="Register"
           ></input>
+          </div>
         </form>
       </div>
       <div className="extra"></div>
