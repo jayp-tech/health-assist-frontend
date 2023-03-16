@@ -1,5 +1,5 @@
 import request from "../../lib/request";
-import { COUNSELOR_PATIENT_CLEAR, COUNSELOR_PATIENT_ERROR, COUNSELOR_PATIENT_FETCHING, COUNSELOR_PATIENT_LIST_ERROR, COUNSELOR_PATIENT_LIST_FETCHING, COUNSELOR_PATIENT_LIST_SUCCESS, COUNSELOR_PATIENT_SUCCESS, COUNSELOR_REJECT_PATIENT_ERROR, COUNSELOR_REJECT_PATIENT_FETCHING, COUNSELOR_REJECT_PATIENT_SUCCESS, ONLOAD_COUNSELOR_PATIENT_LIST } from "../types";
+import { COUNSELOR_PATIENT_CLEAR, COUNSELOR_APPOINTMENTS_CANCEL,COUNSELOR_PATIENT_ERROR, COUNSELOR_PATIENT_FETCHING, COUNSELOR_PATIENT_LIST_ERROR, COUNSELOR_PATIENT_LIST_FETCHING, COUNSELOR_PATIENT_LIST_SUCCESS, COUNSELOR_PATIENT_SUCCESS, COUNSELOR_REJECT_PATIENT_ERROR, COUNSELOR_REJECT_PATIENT_FETCHING, COUNSELOR_REJECT_PATIENT_SUCCESS, ONLOAD_COUNSELOR_PATIENT_LIST } from "../types";
 import { onLoadCounselorAppointmentPage } from "./counselor-appointments";
 import { openErrorMessageModal } from "./gui";
 
@@ -30,9 +30,11 @@ export const fetchPatientList = (page) => async (dispatch) => {
 }
 
 export const fetchPatient = (patientId) => async (dispatch) => {
+    console.log("dsfsf")
     dispatch({ type: COUNSELOR_PATIENT_FETCHING, patientId: patientId });
     request(`counselor/patient/${patientId}`, "GET", null, null)
         .then((resp) => {
+            console.log("mar aa")
             if (resp.data) {
                 dispatch({
                     type: COUNSELOR_PATIENT_SUCCESS,
@@ -42,7 +44,8 @@ export const fetchPatient = (patientId) => async (dispatch) => {
                 dispatch({
                     type: COUNSELOR_PATIENT_ERROR,
                     errorMessage: resp.data.errorMessage,
-                    patientId: patientId
+                    patientId: patientId,
+                   
                 });
             }
         })
@@ -86,4 +89,4 @@ export const rejectPatient = (patientRecordId) => async (dispatch) => {
                 errorMessage: exception.data.errorMessage
             });
         });
-}
+    }
