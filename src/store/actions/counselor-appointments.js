@@ -1,5 +1,5 @@
 import request from "../../lib/request";
-import { COUNSELOR_APPOINTMENTS_ERROR, COUNSELOR_APPOINTMENTS_FETCHING, COUNSELOR_APPOINTMENTS_FOR_DATE_ERROR, COUNSELOR_APPOINTMENTS_FOR_DATE_FETCHING, COUNSELOR_APPOINTMENTS_FOR_DATE_SUCCESS, COUNSELOR_APPOINTMENTS_SUCCESS, COUNSELOR_MAKE_APPOINTMENT_ERROR, COUNSELOR_MAKE_APPOINTMENT_FETCHING, COUNSELOR_MAKE_APPOINTMENT_SUCCESS, ONLOAD_COUNSELOR_APPOINTMENTS } from "../types";
+import { COUNSELOR_APPOINTMENTS_ERROR,COUNSELOR_APPOINTMENTS_CANCEL_SUCCESS,COUNSELOR_APPOINTMENTS_CANCEL_ERROR, COUNSELOR_APPOINTMENTS_FETCHING, COUNSELOR_APPOINTMENTS_FOR_DATE_ERROR, COUNSELOR_APPOINTMENTS_FOR_DATE_FETCHING, COUNSELOR_APPOINTMENTS_CANCEL,COUNSELOR_APPOINTMENTS_FOR_DATE_SUCCESS, COUNSELOR_APPOINTMENTS_SUCCESS, COUNSELOR_MAKE_APPOINTMENT_ERROR, COUNSELOR_MAKE_APPOINTMENT_FETCHING, COUNSELOR_MAKE_APPOINTMENT_SUCCESS, ONLOAD_COUNSELOR_APPOINTMENTS } from "../types";
 import { openErrorMessageModal, openSuccessMessageModal } from "./gui";
 
 export const fetchAppointments = (page) => async (dispatch) => {
@@ -92,4 +92,23 @@ export const onLoadCounselorAppointmentPage = () => (dispatch) => {
     dispatch({
         type: ONLOAD_COUNSELOR_APPOINTMENTS
     })
+}
+
+export const cancelAppointment = (appointmentId) => async (dispatch) => {
+    dispatch({ type: COUNSELOR_APPOINTMENTS_CANCEL, id: appointmentId });
+    console.log("Oh lord")
+    request(`counselor/patient/${appointmentId}`, "DELETE", null, null)
+        .then((resp) => {
+            dispatch({
+                type:COUNSELOR_APPOINTMENTS_CANCEL_SUCCESS
+            });
+        })
+        .catch((exception) => {
+            // handle error.
+            dispatch(openErrorMessageModal(exception.data.errorMessage));
+            dispatch({
+                type: COUNSELOR_APPOINTMENTS_CANCEL_ERROR,
+                errorMessage: exception.data.errorMessage
+            });
+        });
 }
