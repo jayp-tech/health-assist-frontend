@@ -50,13 +50,13 @@ const getDefaultAvailableTimeslots = () => {
   });
   return defaultTimeslots;
 };
-export function MakeAppointment({
+export function EditAppointment({
   patient,
   onUpdateVisibility,
   onSelectDate,
   payload,
   requestState,
-  onMakeAppointment,
+  onEditAppointment,
   errorMessage,
   reservedTimeSlot
 }) {
@@ -104,7 +104,7 @@ export function MakeAppointment({
           // Language props
           onStartTimeSelect={({ availableTimeslot }) => {
             onUpdateVisibility(false);
-            onMakeAppointment(availableTimeslot);
+            onEditAppointment(availableTimeslot);
           }}
           lang_cancelButtonText="Cancel"
           lang_confirmButtonText="Confirm"

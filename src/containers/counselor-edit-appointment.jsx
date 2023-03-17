@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MakeAppointment } from "../components/make-appointment/make-appointment";
+import { EditAppointment } from "../components/make-appointment/edit-appointment";
 import { toUTCDateTime } from "../lib/time-util";
 import { RequestState } from "../lib/types";
 import {
   fetchAppointmentsForDate,
-  makeAppointment
+  editAppointment
 } from "../store/actions/counselor-appointments";
 
-export default function CounselorMakeAppointment({
+export default function CounselorEditAppointment({
   patient,
   patientRecordId,
   onUpdateVisibility,
@@ -32,9 +32,10 @@ export default function CounselorMakeAppointment({
       : null
   );
 
-  const onMakeAppointment = ({ startTime, endTime }) => {
+
+  const onEditAppointment = ({ startTime, endTime }) => {
     dispatch(
-      makeAppointment(
+      editAppointment(
         patientRecordId,
         toUTCDateTime(startTime),
         toUTCDateTime(endTime)
@@ -42,15 +43,14 @@ export default function CounselorMakeAppointment({
     );
   };
 
-
   return (
-    <MakeAppointment
+    <EditAppointment
       patient={patient}
       onUpdateVisibility={onUpdateVisibility}
       onSelectDate={onSelectDate}
       payload={payload}
       requestState={requestState}
-      onMakeAppointment={onMakeAppointment}
+      onEditAppointment={onEditAppointment}
     />
   );
 }
