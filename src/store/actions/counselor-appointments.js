@@ -71,6 +71,7 @@ export const makeAppointment = (patientRecordId, startDateTime, endDateTime) => 
         endDateTime
     })
         .then((resp) => {
+            
             dispatch(openSuccessMessageModal("Your appointment was booked!"));
             dispatch({
                 type: COUNSELOR_MAKE_APPOINTMENT_SUCCESS,
@@ -88,27 +89,39 @@ export const makeAppointment = (patientRecordId, startDateTime, endDateTime) => 
         });
 }
 
-export const onLoadCounselorAppointmentPage = () => (dispatch) => {
-    dispatch({
-        type: ONLOAD_COUNSELOR_APPOINTMENTS
+export const editAppointment = (patientRecordId, startDateTime, endDateTime) => async (dispatch) => {
+    if (!patientRecordId || !startDateTime || !endDateTime) {
+        return;
+    }
+    dispatch({ type: COUNSELOR_MAKE_APPOINTMENT_FETCHING, id: patientRecordId });
+    request(`counselor/patient/appointment`, "PUT", null, {
+        patientRecordId,
+        startDateTime,
+        endDateTime
     })
-}
-
-export const cancelAppointment = (appointmentId) => async (dispatch) => {
-    dispatch({ type: COUNSELOR_APPOINTMENTS_CANCEL, id: appointmentId });
-    console.log("Oh lord")
-    request(`counselor/patient/${appointmentId}`, "DELETE", null, null)
         .then((resp) => {
+            
+            dispatch(openSuccessMessageModal("Your appointment was changed!"));
             dispatch({
-                type:COUNSELOR_APPOINTMENTS_CANCEL_SUCCESS
+                type: COUNSELOR_MAKE_APPOINTMENT_SUCCESS,
+                id: patientRecordId
             });
+            window.location.reload();
         })
+        
         .catch((exception) => {
             // handle error.
             dispatch(openErrorMessageModal(exception.data.errorMessage));
             dispatch({
-                type: COUNSELOR_APPOINTMENTS_CANCEL_ERROR,
-                errorMessage: exception.data.errorMessage
+                type: COUNSELOR_MAKE_APPOINTMENT_ERROR,
+                errorMessage: exception.data.errorMessage,
+                id: patientRecordId
             });
         });
+}
+
+export const onLoadCounselorAppointmentPage = () => (dispatch) => {
+    dispatch({
+        type: ONLOAD_COUNSELOR_APPOINTMENTS
+    })
 }
