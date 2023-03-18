@@ -76,16 +76,6 @@
     padding: 1rem;
 }
 
-.pat-to-doc {
-    text-align: center;
-}
-
-.tab-head-doc {
-    background-color: black;
-    color: white;
-    padding: 10px;
-}
-
 .assign-pat td {
     justify-content: space-around;
     border-bottom: 1px solid black;
@@ -129,4 +119,16 @@
 .pagination a:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
+}
+
+.pat-to-doc {
+    margin-top: 3%;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.tab-head-doc {
+    background-color: #2a4c8b;
+    color: white;
+    padding: 10px;
 }
