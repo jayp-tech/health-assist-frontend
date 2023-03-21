@@ -12,7 +12,7 @@ import CounselorEditAppointment from "../../containers/counselor-edit-appointmen
 import { openErrorMessageModal } from "../../store/actions/gui";
 import './view-schedule.css';
 
-    const Button = styled.div`
+const Button = styled.div`
     position: relative;
     display: flex;
     align-items: center;
@@ -104,15 +104,25 @@ export function ViewScheduleComponent({ payload, role }) {
     };
     const dispatch = useDispatch();
     const handleCancelAppointment = async (appointmentId) => {
-        try {
-            const response = await request(`counselor/patient/${appointmentId}`, "DELETE", null, null);
-            window.location.reload();
-        } catch (exception) {
-            dispatch(openErrorMessageModal(exception.data.errorMessage));
-            dispatch({
-                type: COUNSELOR_APPOINTMENTS_CANCEL_ERROR,
-                errorMessage: exception.data.errorMessage
-            });
+        if (role === UserRole.COUNSELOR) {
+            try {
+                await request(`counselor/patient/${appointmentId}`, "DELETE", null, null);
+                window.location.reload();
+            } catch (exception) {
+                dispatch(openErrorMessageModal(exception.data.errorMessage));
+                dispatch({
+                    type: COUNSELOR_APPOINTMENTS_CANCEL_ERROR,
+                    errorMessage: exception.data.errorMessage
+                });
+            }
+
+        } else {
+            try {
+                await request(`doctor/appointment/${appointmentId}`, "DELETE", null, null);
+                window.location.reload();
+            } catch (exception) {
+                dispatch(openErrorMessageModal(exception.data.errorMessage));
+            }
         }
     };
 
@@ -163,15 +173,15 @@ export function ViewScheduleComponent({ payload, role }) {
 
                                     >Cancel</Link></td>
                                     <td>
-                                    <Button
-                                    title="Edit Appointment"
-                                    onClick={() => {
-                                    onOpenScheduler(record);
-                                    }}
-                                >
-                                   Edit Appointment
-                                </Button>
-                                </td>
+                                        <Button
+                                            title="Edit Appointment"
+                                            onClick={() => {
+                                                onOpenScheduler(record);
+                                            }}
+                                        >
+                                            Edit Appointment
+                                        </Button>
+                                    </td>
 
                                 </tr>
                             })
@@ -192,7 +202,7 @@ export function ViewScheduleComponent({ payload, role }) {
             {appointmentVisibility.isOpen && (
                 <EditAppointment
                     onUpdateVisibility={setAppointmentVisibility}
-                    
+
                     {...appointmentVisibility}
                 />
             )}
