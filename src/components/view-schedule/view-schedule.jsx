@@ -106,7 +106,7 @@ export function ViewScheduleComponent({ payload, role }) {
     const handleCancelAppointment = async (appointmentId) => {
         if (role === UserRole.COUNSELOR) {
             try {
-                await request(`counselor/patient/${appointmentId}`, "DELETE", null, null);
+                await request(`counselor/appointment/${appointmentId}`, "DELETE", null, null);
                 window.location.reload();
             } catch (exception) {
                 dispatch(openErrorMessageModal(exception.data.errorMessage));
