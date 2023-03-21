@@ -10,6 +10,7 @@ export const MessageType = KeyMirror({
 
 export const openSuccessMessageModal = (message) => async (dispatch) => {
     dispatch({ type: OPEN_MESSAGE_MODAL, message: message, messageType: MessageType.SUCCESS });
+    window.location.reload();
 }
 
 export const openErrorMessageModal = (message) => async (dispatch) => {
