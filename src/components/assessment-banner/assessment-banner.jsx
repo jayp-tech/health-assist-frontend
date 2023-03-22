@@ -1,6 +1,5 @@
 import React from 'react';
 import './assessment-banner.css';
-import BannerImage from './images/assessment-banner.jpg'
 
 function AssessmentBanner() {
   return (
