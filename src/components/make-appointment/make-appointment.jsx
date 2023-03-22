@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ScheduleMeeting } from "react-schedule-meeting";
-import { fromUTCDate, toUTCDate } from "../../lib/time-util";
+import {  toUTCDate } from "../../lib/time-util";
 import { RequestState } from "../../lib/types";
 import "./make-appointment.css";
 
@@ -86,7 +86,7 @@ export function MakeAppointment({
   return (
   
     <div className="modal-appointment">
-      <div className="modal-content">
+      <div className="appointment-modal-content">
         <div className="modal-heading">
           <div className="patient-id">
             Schedule appointment for {patient.fullName}
@@ -106,6 +106,9 @@ export function MakeAppointment({
             onUpdateVisibility(false);
             onMakeAppointment(availableTimeslot);
           }}
+          startTimeListStyle="scroll-list"
+          primaryColor="#05306e"
+          borderRadius={20}
           lang_cancelButtonText="Cancel"
           lang_confirmButtonText="Confirm"
           lang_emptyListText="No slots available for today"

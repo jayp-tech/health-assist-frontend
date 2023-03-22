@@ -92,3 +92,34 @@ export const onLoadDoctorAppointmentPage = () => (dispatch) => {
         type: ONLOAD_DOCTOR_APPOINTMENTS
     })
 }
+
+export const editAppointment = (patientRecordId, startDateTime, endDateTime) => async (dispatch) => {
+    if (!patientRecordId || !startDateTime || !endDateTime) {
+        return;
+    }
+    dispatch({ type: DOCTOR_MAKE_APPOINTMENT_FETCHING, id: patientRecordId });
+    request(`doctor/patient/appointment`, "PUT", null, {
+        patientRecordId,
+        startDateTime,
+        endDateTime
+    })
+        .then((resp) => {
+            
+            dispatch(openSuccessMessageModal("Your appointment was changed!"));
+            dispatch({
+                type: DOCTOR_MAKE_APPOINTMENT_SUCCESS,
+                id: patientRecordId
+            });
+            window.location.reload();
+        })
+        
+        .catch((exception) => {
+            // handle error.
+            dispatch(openErrorMessageModal(exception.data.errorMessage));
+            dispatch({
+                type: DOCTOR_MAKE_APPOINTMENT_ERROR,
+                errorMessage: exception.data.errorMessage,
+                id: patientRecordId
+            });
+        });
+}

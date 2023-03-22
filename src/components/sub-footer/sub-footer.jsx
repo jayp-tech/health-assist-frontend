@@ -1,7 +1,6 @@
 import { faDiscord, faFacebook, faInstagram, faLinkedin, faTelegram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import ContactUs from '../../containers/contact-us'
 import './sub-footer.css'
 
 export function SubFooterComponent() {
