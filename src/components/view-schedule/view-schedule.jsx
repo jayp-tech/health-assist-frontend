@@ -137,7 +137,7 @@ export function ViewScheduleComponent({ payload, role }) {
             ...props,
         });
     };
-    modal-appointment
+    
     const EditAppointment =
     role === UserRole.DOCTOR ? DoctorEditAppointment : CounselorEditAppointment;
 
