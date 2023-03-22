@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import { PathConstants } from '../../lib/path-constants';
@@ -137,7 +137,7 @@ export function ViewScheduleComponent({ payload, role }) {
             ...props,
         });
     };
-
+    modal-appointment
     const EditAppointment =
     role === UserRole.DOCTOR ? DoctorEditAppointment : CounselorEditAppointment;
 
