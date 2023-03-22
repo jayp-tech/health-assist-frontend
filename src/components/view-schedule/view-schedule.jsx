@@ -11,6 +11,7 @@ import { COUNSELOR_APPOINTMENTS_CANCEL_ERROR } from "../../store/types";
 import CounselorEditAppointment from "../../containers/counselor-edit-appointment";
 import { openErrorMessageModal } from "../../store/actions/gui";
 import './view-schedule.css';
+import DoctorEditAppointment from "../../containers/doctor-edit-appointment";
 
 const Button = styled.div`
     position: relative;
@@ -137,7 +138,8 @@ export function ViewScheduleComponent({ payload, role }) {
         });
     };
 
-    const EditAppointment = CounselorEditAppointment;
+    const EditAppointment =
+    role === UserRole.DOCTOR ? DoctorEditAppointment : CounselorEditAppointment;
 
     return (
         <>
