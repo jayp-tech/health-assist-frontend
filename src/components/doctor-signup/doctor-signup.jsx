@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { PathConstants } from "../../lib/path-constants";
 import "../patient-signup/patient-signup.css";
 
 function showPassword() {

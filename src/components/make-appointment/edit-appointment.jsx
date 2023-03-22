@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ScheduleMeeting } from "react-schedule-meeting";
-import { fromUTCDate, toUTCDate } from "../../lib/time-util";
+import { toUTCDate } from "../../lib/time-util";
 import { RequestState } from "../../lib/types";
 import "./make-appointment.css";
 
