@@ -186,9 +186,11 @@ export default function ListOfPatient({
         <>
           <Button
             title="Schedule Appointment"
-            onClick={() => onOpenScheduler(data)}
+            onClick={() => {
+              (data.appointmentId && data.appointmentId !== "") ? alert('This feature will be available soon!') : onOpenScheduler(data);
+            }}
           >
-            Schedule Appointment
+            {(data.appointmentId && data.appointmentId !== "") ? 'Reschedule Appointment' : 'Schedule Appointment'}
           </Button>
         </>
       ),
