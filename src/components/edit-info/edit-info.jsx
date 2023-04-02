@@ -57,11 +57,11 @@ const EditInfoComponent = ({
                             <input
                                 type="text"
                                 placeholder="Enter your Email name"
-                                className={isReadable && "non-readable-cursor"}
-                                required={isReadable}
+                                className={true && "non-readable-cursor"}
+                                required={true}
                                 autoComplete="true"
                                 value={user.emailAddress}
-                                readOnly={isReadable}
+                                readOnly={true}
                                 onChange={(e) => {
                                     onFieldChange(
                                         "emailAddress",
