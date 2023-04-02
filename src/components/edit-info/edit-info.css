@@ -1,0 +1,68 @@
+.profile-form {
+    margin: 20px auto;
+    width: 50%;
+    height: calc(99);
+    background-color: rgb(98, 74, 74);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0.5;
+    border-radius: 2%;
+}
+
+.profile-form h1 {
+    color: white;
+    text-align: center;
+}
+
+.name-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.profile-form label {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    color: rgb(190, 196, 211);
+    font-size: 1rem;
+}
+
+.address-input {
+    width: 70%;
+}
+
+.user-profile-button {
+    background-color: dodgerblue; /* set the background color to gold */
+    color: #fff; /* set the text color to white */
+    border: none; /* remove the border */
+    border-radius: 10px; /* round the corners */
+    padding: 10px 20px; /* add padding to the button */
+    font-size: 18px; /* set the font size */
+    font-weight: bold; /* set the font weight to bold */
+    cursor: pointer; /* add a pointer cursor on hover */
+    transition: all 0.2s ease-in-out; /* add a smooth transition effect */
+    display: inline-block;
+}
+
+.user-profile-button:hover {
+    background-color: #1e792a;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-profile-button:active {
+    background-color: #1e792a;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.non-readable-cursor {
+    cursor: default;
+}
+
+/* .input-border {
+    bor
+} */
