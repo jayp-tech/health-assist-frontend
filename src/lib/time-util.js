@@ -91,11 +91,16 @@ export function toReadableDateFormat(receviedAppointmentDateTime) {
 
 
 export const toStartHourDate = (date) => {
-  return new Date(toUTCDateInDate(new Date(date)).setHours(0, 0, 0, 0)).getTime();
+  const current_date = new Date(date);
+  current_date.setHours(0,0,0);
+  
+  return current_date.getTime();
 }
 
 export const toEndHourDate = (date) => {
-  return new Date(toUTCDateInDate(new Date(date)).setHours(23, 59, 59, 999)).getTime();
+  const current_date = new Date(date);
+  current_date.setHours(23,59,59);
+  return current_date.getTime();
 }
 
 export const getMonthName = (month) => {
@@ -157,13 +162,15 @@ function getDateOfISOWeek(w, y) {
 
 function getDateRangeOfWeek(w, y) {
   var startDate = getDateOfISOWeek(w, y);
+  startDate.setDate(startDate.getDate()-6); 
   // easily get ending date by adding 6 days more
   var endDate = getDateOfISOWeek(w, y);
-  endDate.setDate(endDate.getDate() + 6);
+  endDate.setDate(endDate.getDate());  
   return [startDate, endDate];
 }
 
 export function toRangeFromDay(value) {
+  
   return [toStartHourDate(value), toEndHourDate(value)];
 }
 
@@ -178,13 +185,12 @@ export function toRangeFromMonth(value) {
   let [year, month] = value.split("-");
   var firstDay = new Date();
   firstDay.setFullYear(year);
-  firstDay.setMonth(Number(month) - 1);
+  firstDay.setMonth(Number(month - 2));
   firstDay.setDate(1);
 
   var lastDay = new Date();
   lastDay.setFullYear(year);
-  lastDay.setMonth(Number(month));
+  lastDay.setMonth(Number(month-1));
   lastDay.setDate(1);
-
   return [toStartHourDate(firstDay), toStartHourDate(lastDay)];
 }

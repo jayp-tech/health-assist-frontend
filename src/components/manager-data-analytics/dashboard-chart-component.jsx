@@ -7,6 +7,9 @@ import PieChartForTotalAssessmentsComponent from './pie-charts/pie-chart-total-a
 import { toRangeFromDay, toRangeFromMonth, toRangeFromWeek } from '../../lib/time-util'
 import './dashboard-chart.css'
 
+
+const currentDate = new Date();
+const localDate = currentDate.toLocaleDateString("en-CA");  
 export default function DashboardChartsComponent({ payload,
     onChange,
     chartCategory,
@@ -44,13 +47,13 @@ export default function DashboardChartsComponent({ payload,
                                     name='monthYear'
                                     min='2022-07-01'
                                     className='month-selector'
+                                    value={inputValues[0] || localDate}
                                     onChange={(e) => {
                                         e.preventDefault();
                                         const [startDate, endDate] = toRangeFromDay(e.target.value);
                                         onChangeInputValues(0, e.target.value);
                                         onChange(startDate, endDate);
                                     }}
-                                    value={inputValues[0]}
                                 >
                                 </input>
                                 <span className="tooltiptext">Day, Month, Year</span>
