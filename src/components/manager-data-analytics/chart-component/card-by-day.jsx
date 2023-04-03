@@ -3,10 +3,11 @@ import {
     CartesianGrid, ComposedChart, Legend, Line, Tooltip, XAxis,
     YAxis
 } from 'recharts';
-import { toUTCDateTime, fromUTCDate } from '../../../lib/time-util';
 
 
-export default function ChartByMonthComponent({ payload }) {
+
+export default function CardByDayComponent({ payload }) {
+    
     const data = React.useMemo(() => {
         let data = {};
         for (let i = 1; i <= 24; i++) {
@@ -16,7 +17,9 @@ export default function ChartByMonthComponent({ payload }) {
             }
         }
         payload.patients.forEach((patient) => {
-            const hour = fromUTCDate(toUTCDateTime(patient.createdAt)).getHours();
+
+            const hour = new Date(patient.createdAt).getHours();
+        
             data[hour].users++;
         })
         return Object.values(data);
