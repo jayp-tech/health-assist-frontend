@@ -14,13 +14,30 @@ const EditInfoComponent = ({
     return (
         <>
             <div className="profile-form">
-                <h1>Your Profile</h1>
+
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
                         onSubmit();
                     }}
                 >
+                                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <h1>Your Profile</h1>
+                    {isReadable === false && (
+                        <button
+                            className="user-profile-button"
+                            type="button"
+                            onClick={onPressBack}
+                        >
+                            Back
+                        </button>
+                    )}
                     {isReadable === true ? (
                         <div
                             style={{ display: "flex", justifyContent: "right" }}
@@ -30,13 +47,14 @@ const EditInfoComponent = ({
                                 type="submit"
                                 // onClick={() => toggleForm()}
                             >
-                                Edit Profile
+                                Edit
                             </button>
                         </div>
                     ) : (
                         <></>
                     )}
-                    <div className="name-row" style={{ width: "100%" }}>
+                </div>
+                    <div className="name-input" >
                         <div>
                             <label>Your Name:</label>
                             <input
@@ -52,7 +70,10 @@ const EditInfoComponent = ({
                                 }}
                             />
                         </div>
-                        <div>
+                        
+                    </div>
+                    <div className="name-input">
+                    <div>
                             <label>Your Email:</label>
                             <input
                                 type="text"
@@ -71,7 +92,7 @@ const EditInfoComponent = ({
                             />
                         </div>
                     </div>
-                    <div className="name-row">
+                    <div className="name-input">
                         <div>
                             <label>Date of Birth</label>
                             {isReadable ? (
@@ -247,14 +268,6 @@ const EditInfoComponent = ({
                                 // onClick={() => toggleForm()}
                             >
                                 Submit
-                            </button>
-                            <button
-                                className="user-profile-button"
-                                type="button"
-                                onClick={onPressBack}
-                                // onClick={() => toggleForm()}
-                            >
-                                Back
                             </button>
                         </div>
                     ) : (

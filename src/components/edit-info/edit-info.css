@@ -14,11 +14,14 @@
 .profile-form h1 {
     color: white;
     text-align: center;
+    margin-left: 200px;
 }
 
 .name-row {
-    display: flex;
-    flex-direction: row;
+    width: 70%;
+}
+
+.name-input {
     width: 100%;
 }
 
@@ -30,7 +33,7 @@
 }
 
 .address-input {
-    width: 70%;
+    width: 100%;
 }
 
 .user-profile-button {
