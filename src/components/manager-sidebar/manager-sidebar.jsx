@@ -20,7 +20,7 @@ export function ManagerSidebar() {
       <div
         style={{
           position: "fixed",
-          width: "20%",
+          width: "16%",
           backgroundColor: "#f1f1f1",
           // height: "100%",
           minHeight: "100vh",

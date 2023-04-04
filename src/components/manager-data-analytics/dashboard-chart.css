@@ -12,7 +12,6 @@
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
-    justify-content: space-around;
 }
 
 /* Clear floats after the columns */
@@ -36,7 +35,11 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
+    background-color: white;
+    width: 660px;
+    margin-left: 23px;
+    border-radius: 6px;
+    border-top: 16px solid #3182bd;
 }
 
 #charts-card-header {
@@ -132,6 +135,14 @@
 }
 
 .right-piechart-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    width: 660px;
+    margin-left: 35px;
+    border-radius: 6px;
+    border-top: 16px solid #9695cc;
     display: flex;
     flex-direction: column;
     align-items: center;
