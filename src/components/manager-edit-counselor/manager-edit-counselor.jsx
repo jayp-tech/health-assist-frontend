@@ -93,6 +93,21 @@ const Button = styled.div`
   }
 `;
 
+const Table = styled.table`
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 2px 2px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  th {
+    text-align: center;
+  }
+  tr > td {
+    padding: 12px 8px;
+  }
+`;
+
 export function ManagerEditCounselor({
   payload,
   onRemove,
@@ -166,7 +181,7 @@ export function ManagerEditCounselor({
             title="Type in an Email"
           ></input>
 
-          <table className="manager-counselor-list" id="myCounselorList">
+          <Table id="myCounselorList">
             <tbody>
               <tr>
                 <th>Counselor Name</th>
@@ -193,7 +208,7 @@ export function ManagerEditCounselor({
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
           <br></br>
           <PaginationComponent
             onPageChange={onPageChange}

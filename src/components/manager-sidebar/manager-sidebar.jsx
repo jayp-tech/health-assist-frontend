@@ -15,35 +15,46 @@ export function ManagerSidebar() {
     navigate(PathConstants.ManagerLogin);
   };
 
+  function toggleNav() {
+    if (parseInt(document.getElementById("mySidepanel").style.width) === 0) {
+      document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("manager-content-container").style.marginLeft = "80px";
+    } else {
+      document.getElementById("mySidepanel").style.width = "0";
+      document.getElementById("manager-content-container").style.marginLeft = "0";
+    }
+  }
+
   return (
     <>
+
       <div
         style={{
-          position: "fixed",
-          width: "20%",
           backgroundColor: "#f1f1f1",
-          // height: "100%",
+          height: "100%",
           minHeight: "100vh",
           margin: "0px",
         }}
+        id="mySidepanel"
+        class="sidepanel"
       >
-        <h2 style={{ textAlign: "center" }}>Admin Dashboard</h2>
-        <div className="sidebar-menu">
-          <Link className="sidebar-links" to={PathConstants.ManagerDataAnalytics}>Report</Link>
-          <Link className="sidebar-links" to={PathConstants.ManagePatient}>
-            Manage Patient
-          </Link>
-          <Link className="sidebar-links" to={PathConstants.ManageDoctor}>
-            Manage Doctor
-          </Link>
-          <Link className="sidebar-links" to={PathConstants.ManageCounselor}>
-            Manage Counselor
-          </Link>
-          <button className="sidebar-links" onClick={onLogout}>
-            Log Out
-          </button>
-        </div>
+        <button style={{ textAlign: "center", fontSize: "x-large" }} onClick={toggleNav}>&times;</button>
+        <a className="sidebar-links" href={PathConstants.ManagerDataAnalytics}>Report</a>
+        <a className="sidebar-links" href={PathConstants.ManagePatient}>
+          Manage Patient
+        </a>
+        <a className="sidebar-links" href={PathConstants.ManageDoctor}>
+          Manage Doctor
+        </a>
+        <a className="sidebar-links" href={PathConstants.ManageCounselor}>
+          Manage Counselor
+        </a>
+        <button className="sidebar-links closebtn" onClick={onLogout}>
+          Log Out
+        </button>
       </div>
+      <h2 style={{ textAlign: "center" }} onClick={toggleNav}> &#9776; Admin Menu</h2>
+
     </>
   );
 }

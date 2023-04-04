@@ -7,6 +7,7 @@ import { SideNavContainerComponent } from "../components/side-nav-container/side
 import { toUTCDate } from "../lib/time-util";
 import { RequestState } from "../lib/types";
 import { createUser } from "../store/actions/admin";
+import { Container } from "rsuite";
 
 const initialUserState = {
   registrationNumber: "",
@@ -53,8 +54,8 @@ export default function ManagerCreateUser({ role }) {
   }, [requestState, setUser]);
 
   return (
-    <>
-      <SideNavContainerComponent>
+    <Container id="manager-content-container">
+      <SideNavContainerComponent >
         <ManagerSidebar />
         <CreateUserComponent
           user={user}
@@ -66,6 +67,6 @@ export default function ManagerCreateUser({ role }) {
         />
       </SideNavContainerComponent>
       <FooterComponent />
-    </>
+    </Container>
   );
 }

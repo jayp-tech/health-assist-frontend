@@ -9,7 +9,7 @@
 
 .manager-edit-doctor-container {
     width: 80%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
 }
 
 .manager-edit-doctor-container .header-container {
@@ -40,7 +40,8 @@
 }
 
 .manager-doctor-table-header {
-    font-size: 40px
+    font-size: 40px;
+    margin-left: 25%;
 }
 
 .manager-add-doctor-button {

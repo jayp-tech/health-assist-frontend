@@ -6,6 +6,7 @@ import { ManagerSidebar } from '../components/manager-sidebar/manager-sidebar';
 import { SideNavContainerComponent } from '../components/side-nav-container/side-nav-container';
 import { toEndHourDate, toRangeFromDay, toRangeFromMonth, toRangeFromWeek, toStartHourDate, toUTCDateInDate } from '../lib/time-util';
 import { fetchReport, fetchReportParameters } from '../store/actions/admin';
+import { Container } from 'rsuite';
 
 
 var currentDate = toUTCDateInDate(new Date());
@@ -65,8 +66,8 @@ export default function ManagerDataAnalytics(props) {
     }
 
     return (
-        <>
-            <SideNavContainerComponent>
+        <Container id="manager-content-container">
+            <SideNavContainerComponent >
                 <ManagerSidebar />
                 <ManagerDataAnalyticsComponent
                     reportParametersRequestState={reportParametersRequestState}
@@ -83,7 +84,7 @@ export default function ManagerDataAnalytics(props) {
                 />
             </SideNavContainerComponent>
             <FooterComponent />
-        </>
+        </Container>
     )
 }
 
