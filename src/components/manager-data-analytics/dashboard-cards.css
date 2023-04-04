@@ -48,16 +48,33 @@
     }
 }
 
+.icon1{
+    color: #d1e9fc;
+}
+
+.icon2{
+    color: #377b95;
+}
+
+.icon3{
+    color: #f8e582;
+}
+
+.icon4{
+    color: #ffe7d9;
+}
+
+
 .cards-color-users {
     border-top: 16px solid #d1e9fc;
 }
 
 .cards-color-assessments {
-    border-top: 16px solid #d0f2ff;
+    border-top: 16px solid #377b95;
 }
 
 .cards-color-meeting-counselor {
-    border-top: 16px solid #FFF7cd;
+    border-top: 16px solid #f8e582;
 }
 
 .cards-color-meeting-doctor {
