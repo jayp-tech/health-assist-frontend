@@ -1,10 +1,10 @@
 /* Float four columns side by side */
-.dashboard-chart-columns {
-    /* float: left;
-    padding: 0 10px;
-    padding-left: 2.1rem; */
+.dashboard-chart-columns{
+    width:56%;
 }
-
+.pie-chart{
+    width: 39%;
+}
 /* Remove extra left and right margins, due to padding */
 .dashboard-chart-row {
     /* margin: 0 -5px; */
@@ -36,10 +36,10 @@
     padding: 16px;
     text-align: center;
     background-color: white;
-    width: 660px;
     margin-left: 23px;
     border-radius: 6px;
     border-top: 16px solid #3182bd;
+    min-height: 565px;
 }
 
 #charts-card-header {
@@ -139,13 +139,12 @@
     padding: 16px;
     text-align: center;
     background-color: white;
-    width: 660px;
-    margin-left: 35px;
     border-radius: 6px;
     border-top: 16px solid #9695cc;
     display: flex;
     flex-direction: column;
     align-items: center;
+     min-height: 565px;
 }
 
 .user-input-container {

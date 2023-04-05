@@ -113,7 +113,7 @@ export default function DashboardChartsComponent({ payload,
                 </div>
             </div>
             <div className='horizontal-space'></div>
-            <div className='dashboard-chart-columns pie-chart'>
+            <div className='pie-chart'>
                 <div className='right-piechart-card'>
                     <h3 id="pie-chart-card-header" style={{ fontSize: "2rem", marginBottom: "3rem" }}>Assessments over Patients</h3>
                     <PieChartForTotalAssessmentsComponent
