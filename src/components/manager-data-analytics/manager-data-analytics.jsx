@@ -28,7 +28,7 @@ export default function ManagerDataAnalyticsComponent({
     onChangeInputValues
 }) {
     return (
-        <Container>
+        <Container id="manager-content-container">
             <div>
                 <h3 className='dashboard-content'>
                     Dashboard

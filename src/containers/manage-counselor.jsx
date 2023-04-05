@@ -8,6 +8,7 @@ import { ManagerSidebar } from "../components/manager-sidebar/manager-sidebar";
 import { SideNavContainerComponent } from "../components/side-nav-container/side-nav-container";
 import { RequestState } from "../lib/types";
 import { fetchCounselors, removeCounselor } from "../store/actions/admin";
+import { Container } from "rsuite";
 
 export default function ManageCounselor() {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ export default function ManageCounselor() {
   }
 
   return (
-    <>
+    <Container id="manager-content-container">
       <SideNavContainerComponent>
         <ManagerSidebar />
         {
@@ -56,6 +57,6 @@ export default function ManageCounselor() {
         }
       </SideNavContainerComponent>
       <FooterComponent />
-    </>
+    </Container>
   );
 }

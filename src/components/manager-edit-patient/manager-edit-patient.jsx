@@ -93,6 +93,21 @@ const Button = styled.div`
   }
 `;
 
+const Table = styled.table`
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 2px 2px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  th {
+    text-align: center;
+  }
+  tr > td {
+    padding: 12px 8px;
+  }
+`;
+
 export function ManagerEditPatient({
   payload,
   onRemove,
@@ -131,7 +146,7 @@ export function ManagerEditPatient({
   }
   return (
     <>
-      <div className="manager-edit-patient-container">
+      <div className="manager-edit-patient-container" id="manager-content-container">
         <div
           style={{
             marginLeft: "auto",
@@ -163,7 +178,7 @@ export function ManagerEditPatient({
             title="Type in an Email"
           ></input>
 
-          <table className="manager-patient-list" id="myPatientList">
+          <Table id="myPatientList" size="middle">
             <tbody>
               <tr>
                 <th>Patient Name</th>
@@ -191,7 +206,7 @@ export function ManagerEditPatient({
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
           <br></br>
           <PaginationComponent
             onPageChange={onPageChange}
