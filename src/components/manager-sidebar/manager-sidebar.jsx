@@ -36,7 +36,7 @@ export function ManagerSidebar() {
           margin: "0px",
         }}
         id="mySidepanel"
-        class="sidepanel"
+        className="sidepanel"
       >
         <button style={{ textAlign: "center", fontSize: "x-large" }} onClick={toggleNav}>&times;</button>
         <a className="sidebar-links" href={PathConstants.ManagerDataAnalytics}>Report</a>

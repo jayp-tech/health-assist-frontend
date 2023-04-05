@@ -162,10 +162,11 @@ function getDateOfISOWeek(w, y) {
 
 function getDateRangeOfWeek(w, y) {
   var startDate = getDateOfISOWeek(w, y);
-  startDate.setDate(startDate.getDate()-6); 
+  startDate.setDate(startDate.getDate()); 
   // easily get ending date by adding 6 days more
   var endDate = getDateOfISOWeek(w, y);
-  endDate.setDate(endDate.getDate());  
+  // console.log(endDate);
+  endDate.setDate(endDate.getDate()+6);  
   return [startDate, endDate];
 }
 
@@ -185,12 +186,12 @@ export function toRangeFromMonth(value) {
   let [year, month] = value.split("-");
   var firstDay = new Date();
   firstDay.setFullYear(year);
-  firstDay.setMonth(Number(month - 2));
+  firstDay.setMonth(Number(month-1));
   firstDay.setDate(1);
 
   var lastDay = new Date();
   lastDay.setFullYear(year);
-  lastDay.setMonth(Number(month-1));
+  lastDay.setMonth(Number(month));
   lastDay.setDate(1);
-  return [toStartHourDate(firstDay), toStartHourDate(lastDay)];
+  return [toStartHourDate(firstDay), toEndHourDate(lastDay)];
 }

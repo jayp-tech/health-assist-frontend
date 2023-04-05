@@ -1,6 +1,7 @@
 .dashboard-content {
-    font-size: 3rem;
+    font-size: 2rem;
     justify-content: center;
     display: flex;
+    margin: 30px;
     overflow: scroll;
 }
