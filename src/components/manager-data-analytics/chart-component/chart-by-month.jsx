@@ -29,7 +29,7 @@ export default function ChartByMonthComponent({ payload }) {
         return Object.values(data);
     }, [payload]);
     return (
-        <ComposedChart width={800}
+        <ComposedChart width={600}
             height={400}
             data={data}
             margin={{

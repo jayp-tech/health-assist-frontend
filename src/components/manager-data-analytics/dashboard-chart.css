@@ -1,10 +1,10 @@
 /* Float four columns side by side */
-.dashboard-chart-columns {
-    /* float: left;
-    padding: 0 10px;
-    padding-left: 2.1rem; */
+.dashboard-chart-columns{
+    width:56%;
 }
-
+.pie-chart{
+    width: 39%;
+}
 /* Remove extra left and right margins, due to padding */
 .dashboard-chart-row {
     /* margin: 0 -5px; */
@@ -12,7 +12,6 @@
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
-    justify-content: space-around;
 }
 
 /* Clear floats after the columns */
@@ -36,7 +35,11 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
+    background-color: white;
+    margin-left: 23px;
+    border-radius: 6px;
+    border-top: 16px solid #3182bd;
+    min-height: 565px;
 }
 
 #charts-card-header {
@@ -132,9 +135,16 @@
 }
 
 .right-piechart-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    border-radius: 6px;
+    border-top: 16px solid #9695cc;
     display: flex;
     flex-direction: column;
     align-items: center;
+     min-height: 565px;
 }
 
 .user-input-container {
