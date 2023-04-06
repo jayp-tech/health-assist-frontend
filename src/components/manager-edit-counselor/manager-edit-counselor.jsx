@@ -163,6 +163,8 @@ export function ManagerEditCounselor({
           <div className="manager-add-counselor-button">
             <Button
               title="Add Counselor"
+              style={{ padding: "10px 21px", marginRight: "-75px" }}
+
               className={classNames("forward")}
               onClick={() =>
                 navigate(`${PathConstants.ManagerCreate}/${UserRole.COUNSELOR}`)
@@ -179,6 +181,8 @@ export function ManagerEditCounselor({
             onKeyUp={() => searchByEmail()}
             placeholder="🔍 Search for counselor by Email.."
             title="Type in an Email"
+            style={{ width: "94%", marginRight: "17px" }}
+
           ></input>
 
           <Table id="myCounselorList">

@@ -161,6 +161,7 @@ export function ManagerEditPatient({
             <Button
               title="Add Patient"
               className={classNames("forward")}
+              style={{ padding: "10px 30px", marginRight: "-75px" }}
               onClick={(e) =>
                 navigate(`${PathConstants.ManagerCreate}/${UserRole.PATIENT}`)
               }
@@ -176,6 +177,7 @@ export function ManagerEditPatient({
             onKeyUp={() => searchByEmail()}
             placeholder="🔍 Search for patient by Email.."
             title="Type in an Email"
+            style={{ width: "94%", marginRight: "17px" }}
           ></input>
 
           <Table id="myPatientList" size="middle">

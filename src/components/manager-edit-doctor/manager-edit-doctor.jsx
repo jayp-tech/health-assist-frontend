@@ -160,6 +160,8 @@ export function ManagerEditDoctor({
           <div className="manager-add-doctor-button">
             <Button
               title="Add Doctor"
+              style={{ padding: "10px 38px", marginRight: "-75px" }}
+
               className={classNames("forward")}
               onClick={() =>
                 navigate(`${PathConstants.ManagerCreate}/${UserRole.DOCTOR}`)
@@ -176,6 +178,8 @@ export function ManagerEditDoctor({
             onKeyUp={() => searchByEmail()}
             placeholder="🔍 Search for doctor by Email.."
             title="Type in an Email"
+            style={{ width: "94%", marginRight: "17px" }}
+
           ></input>
 
           <Table id="myDoctorList">
