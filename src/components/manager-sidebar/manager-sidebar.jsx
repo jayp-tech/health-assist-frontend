@@ -30,15 +30,19 @@ export function ManagerSidebar() {
 
       <div
         style={{
+          display: "flex",
+          flexDirection: "column",
+          position: "fixed",
+          width: "16%",
           backgroundColor: "#f1f1f1",
           height: "100%",
           minHeight: "100vh",
           margin: "0px",
         }}
         id="mySidepanel"
-        class="sidepanel"
+        className="sidepanel"
       >
-        <button style={{ textAlign: "center", fontSize: "x-large" }} onClick={toggleNav}>&times;</button>
+        <button className="close-btn" onClick={toggleNav}>&times;</button>
         <a className="sidebar-links" href={PathConstants.ManagerDataAnalytics}>Report</a>
         <a className="sidebar-links" href={PathConstants.ManagePatient}>
           Manage Patient
@@ -53,7 +57,7 @@ export function ManagerSidebar() {
           Log Out
         </button>
       </div>
-      <h2 style={{ textAlign: "center" }} onClick={toggleNav}> &#9776; Admin Menu</h2>
+      <h2 class="admin-menu"style={{ textAlign: "center" }} onClick={toggleNav}> &#9776; Admin Menu</h2>
 
     </>
   );

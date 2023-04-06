@@ -59,7 +59,7 @@ export default function DashboardChartsComponent({ payload,
                                 <span className="tooltiptext">Day, Month, Year</span>
                             </div>
                         </div>
-                        <h2 id='chart-by-month-heading'>New Patients by Day</h2>
+                        <h4 id='chart-by-month-heading'>New Patients by Day</h4>
                         <CardByDayComponent payload={payload} />
                     </div>}
 
@@ -113,8 +113,8 @@ export default function DashboardChartsComponent({ payload,
                 </div>
             </div>
             <div className='horizontal-space'></div>
-            <div className='dashboard-chart-columns pie-chart'>
-                <div className='dashboard-chart-cards right-piechart-card'>
+            <div className='pie-chart'>
+                <div className='right-piechart-card'>
                     <h3 id="pie-chart-card-header" style={{ fontSize: "2rem", marginBottom: "3rem" }}>Assessments over Patients</h3>
                     <PieChartForTotalAssessmentsComponent
                         payload={payload}
